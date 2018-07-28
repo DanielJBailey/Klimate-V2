@@ -49,10 +49,28 @@ class App extends Component {
     console.log('Allowed!');
   }
 
+  
+
   render() {
+
+    function SearchBox(props) {
+      const allowed = props.allowed;
+      if(!allowed) {
+        return (
+          <div>
+            Hello
+          </div>
+        );
+      } else {
+        return null;
+      }
+    }
+
     return (
       <div className="App">
       <button onClick={this.getPosition}>Get Location</button>
+      
+      <SearchBox allowed = {this.state.allowed}/>
       <div className="results">
         <h4>{this.state.longitude}</h4>  
         <h4>{this.state.longitude}</h4>    
