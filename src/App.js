@@ -17,9 +17,9 @@ class App extends Component {
   }
 
   //functin to handle input from zip code form (to come)
-  handleChange(e) {
+  handleChange(event) {
     this.setState({
-      input: e.target.value
+      input: event.target.value
     });
   }
 
@@ -31,13 +31,10 @@ class App extends Component {
   }
 
   //function to handle error callback
-
   userDenied(err) {
     this.setState({
       allowed: false
     });
-    let results = document.querySelector('.results');
-    results.innerHTML = "User is lame!";
   }
 
   //set location state from user location
@@ -46,7 +43,6 @@ class App extends Component {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude
     });
-    console.log('Allowed!');
   }
 
   
@@ -58,7 +54,7 @@ class App extends Component {
       if(!allowed) {
         return (
           <div>
-            Hello
+            
           </div>
         );
       } else {
