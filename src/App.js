@@ -8,7 +8,11 @@ class App extends Component {
       allowed: true, // if user allows location services
       input: '', //input from zip code input
       latitude: null, //latitude of user
-      longitude: null //longitude of user
+      longitude: null, //longitude of user
+      city: null,
+      condition: null,
+      temp: null,
+
     }
     this.handleChange = this.handleChange.bind(this);
     this.getPosition = this.getPosition.bind(this);
@@ -59,11 +63,14 @@ class App extends Component {
     let api = 'http://api.openweathermap.org/data/2.5/weather?';
     let key = '38f67fb8c90f3e0155a438937a83b123';
 
-    fetch(api + 'lat=' + lat + '&lon=' + long + '&APPID=' + key)
+    fetch(api + 'lat=' + lat + '&lon=' + long + '&APPID=' + key + '&units=imperial')
     .then(results => {
       return results.json();
     }).then(data => {
-      console.log(data.weather[0].main);
+      console.log(data);
+      this.setState({
+        
+      })
     });
   }
 
