@@ -68,9 +68,6 @@ class App extends Component {
       return results.json();
     }).then(data => {
       console.log(data);
-      this.setState({
-        
-      })
     });
   }
 
